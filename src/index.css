@@ -1,0 +1,40 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+:root {
+    --primary-bg-color: #FFFFFF;
+    --secondary-bg-color: #C1C4CB;
+    --tritary-bg-color: #2B2D31;
+    --fourth-bg-color: #1D1F22;
+    --btn-bg-color: #E46643;
+    --menu-bg-color: #35393F;
+
+    --primary-text-color: #35393F;
+    --secondary-text-color: #7C8187;
+    --tritary-text-color: #FFFFFF;
+    --fourth-text-color: #E46643;
+}
+
+[data-theme="dark"] {
+    --primary-bg-color: #151619;
+    --secondary-bg-color: #1D1F22;
+    --tritary-bg-color: #2B2D31;
+    --fourth-bg-color: #1D1F22;
+    --btn-bg-color: #F39765;
+    --menu-bg-color: #35393F;
+
+    --primary-text-color: #C1C4CB;
+    --secondary-text-color: #C1C4CB;
+    --tritary-text-color: #FFFFFF; 
+    --fourth-text-color: #F39765; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg-color);
+}
