@@ -11,8 +11,6 @@
 # production
 /build
 
-/scratch    # for temporary files
-scratch
 # misc
 .DS_Store
 .env.local
