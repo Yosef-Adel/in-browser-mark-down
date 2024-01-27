@@ -122,6 +122,9 @@ input[type="text"]:focus {
     transition: 300ms;
     min-height: calc(100vh - 72px);
 }
+.content{
+    grid-area: main;
+}
 
 .layout__main .sidebar--opend {
     background-color: var(--fourth-bg-color);

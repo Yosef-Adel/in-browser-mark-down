@@ -1,4 +1,4 @@
-import { Outlet,  useParams, useNavigate } from "react-router-dom";
+import { Outlet, useParams, useNavigate } from "react-router-dom";
 import img from "../assets/icon-menu.svg";
 import close from "../assets/icon-close.svg";
 import docIcon from "../assets/icon-document.svg";
@@ -16,9 +16,9 @@ const Layout = () => {
     const { id } = useParams();
     const [docName, setDocName] = useState("");
     const [isOpened, setIsOpened] = useState(false);
-    const { files , updateFile, addFile, removeFile} = React.useContext(FileContext);
+    const { files, updateFile, addFile, removeFile } = React.useContext(FileContext);
     const [sidebar, setSidebar] = useState(false);
-    let uid ;
+    let uid;
     const navigate = useNavigate();
 
     const addNewFile = () => {
@@ -54,9 +54,9 @@ const Layout = () => {
         const name = docName;
         const content = file.content;
         updateFile(id, name, content);
-        
+
     }
-    const showSidebar = () =>{
+    const showSidebar = () => {
         setSidebar(!sidebar);
         document.querySelector(".nav").classList.toggle("nav--opend");
         document.querySelector(".nav__menu--open").classList.toggle("hide");
@@ -86,7 +86,7 @@ const Layout = () => {
                     <img className="nav__menu--open" src={img} alt="menu" onClick={showSidebar} />
                     <img className="nav__menu--close" src={close} alt="menu" onClick={showSidebar} />
                 </div>
-                <div className="nav__logo">
+                <div className="nav__logo" onClick={()=> navigate("/")}  >
                     <img src={logo} alt="logo" />
                 </div>
                 {isOpened && (
@@ -96,9 +96,9 @@ const Layout = () => {
                             <div>
                                 <label>Document Name</label>
                                 <input type="text"
-                                    value={docName} 
+                                    value={docName}
                                     onChange={handleInputChange}
-                                    onBlur = {onBlurHandler}
+                                    onBlur={onBlurHandler}
                                 />
                             </div>
                         </div>
@@ -123,7 +123,7 @@ const Layout = () => {
                         {
                             files.map((file) => {
                                 return (
-                                <FileCard file={file} key={file.id} />
+                                    <FileCard file={file} key={file.id} />
                                 )
                             })
                         }
@@ -133,7 +133,9 @@ const Layout = () => {
                         <ThemeSwitcher />
                     </div>
                 </div>
-                <Outlet />
+                <div className="content">
+                    <Outlet />
+                </div>
             </div>
         </>
     )
