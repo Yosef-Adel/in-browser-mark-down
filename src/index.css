@@ -37,4 +37,5 @@ body {
     font-size: 62.5%;
     color: var(--primary-text-color);
     background-color: var(--primary-bg-color);
+    overflow-x: hidden;
 }

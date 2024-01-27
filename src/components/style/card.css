@@ -1,0 +1,37 @@
+.fileCard {
+    display: flex;
+    align-items: center;
+    grid-area: files;
+    margin: 15px 0;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.cardSelected{
+    background-color: var(--tritary-bg-color);
+    color: var(--btn-text-color);
+}
+
+.file-card__icon img {
+    width: 14px;
+    height: 16px;
+    margin: 0 15px;
+}
+
+.fielCard {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.file-card__date {
+    color: var(--secondary-text-color);
+    font-size: 13px;
+    font-weight: 300;
+
+}
+.file-card__name{
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--tritary-text-color);
+}
