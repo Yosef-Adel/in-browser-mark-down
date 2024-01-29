@@ -3,7 +3,7 @@ import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import './style/markdownView.css';
 
-const MarkDownView = ({content}) => {
+const MarkDownView = ({ content }) => {
     const getMarkdownText = () => {
         var rawMarkup = marked(content, { sanitize: true });
         return { __html: DOMPurify.sanitize(rawMarkup) };

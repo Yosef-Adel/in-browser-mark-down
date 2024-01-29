@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { ReactComponent as Sun } from '../../assets/icon-light-mode.svg';
 import { ReactComponent as Moon } from '../../assets/icon-dark-mode.svg';
-import './DarkMode.css';
+import './themeSwitcher.css';
+
 const ThemeSwitcher = () => {
     const [darkMode, setDarkMode] = useLocalStorage(false, 'theme');
     const changeHandeler = (data) => {
@@ -25,6 +26,7 @@ const ThemeSwitcher = () => {
     return (
         <>
             <div className='dark_mode'>
+                <Sun />
                 <input
                     className='dark_mode_input'
                     type='checkbox'
@@ -32,9 +34,8 @@ const ThemeSwitcher = () => {
                     checked={darkMode} onChange={changeHandeler}
                 />
                 <label className='dark_mode_label' htmlFor='darkmode-toggle'>
-                    <Sun />
-                    <Moon />
                 </label>
+                <Moon />
             </div>
         </>
     );

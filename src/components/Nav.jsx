@@ -83,9 +83,9 @@ const Nav = () => {
                 <div className="sidebar ">
                     <h1>My Documents</h1>
                 </div>
-                <div className="nav__menu" >
-                    <img className="nav__menu--open" src={img} alt="menu" onClick={showSidebar} />
-                    <img className="nav__menu--close" src={close} alt="menu" onClick={showSidebar} />
+                <div className="nav__menu" onClick={showSidebar} >
+                    <img className="nav__menu--open" src={img} alt="menu" />
+                    <img className="nav__menu--close" src={close} alt="menu" />
                 </div>
                 <div className="nav__logo" onClick={() => navigate("/")}  >
                     <img src={logo} alt="logo" />

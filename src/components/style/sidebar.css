@@ -2,15 +2,28 @@
 
 .layout__main .sidebar--opend {
     background-color: var(--fourth-bg-color);
-    height: 100% !important;
+    height: 100%;
     color: var(--primary-text-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
 }
 
 .layout__main--opend {
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 25rem  1fr;
+}
+.sidebar__main{
+    margin: 3rem 0;
 }
 
+.sidebar__main .btn {
+    margin-bottom: 3rem;
+}
+.sidebar__options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
