@@ -1,0 +1,30 @@
+.searchContainer {
+    background: var(--primary-bg-color);
+    padding: 2rem;
+    border: 1px solid var(--btn-bg-color);
+    border-radius: 5px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+}
+
+
+.searchContainer input {
+    display: block;
+    background-color: var(--border-color);
+    border: none;
+    color: var(--secondary-text-color);
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+}
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 1px solid var(--tritary-text-color);
+}
+
