@@ -1,0 +1,18 @@
+.sidebar {
+    grid-area: sidebar;
+    display: none;
+}
+
+.sidebar .btn {
+    margin: auto;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+
