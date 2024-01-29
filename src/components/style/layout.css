@@ -4,7 +4,7 @@
     grid-template-areas:
         "sidebar main";
     transition: 300ms;
-    min-height: 100vh;
+    min-height: 85vh;
 }
 .content {
     grid-area: main;

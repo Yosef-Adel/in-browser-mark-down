@@ -45,7 +45,6 @@ const EditPage = () => {
                     <textarea
                         type='text'
                         value={content}
-                        style={{ width: '100%', height: '100%' }}
                         onChange={changeHandler}
                     />
                 </div>

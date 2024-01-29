@@ -1,4 +1,4 @@
-import {  useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { FileContext } from "../store/fileContext";
 import img from "../assets/icon-menu.svg";
@@ -8,19 +8,22 @@ import trashIcon from "../assets/icon-delete.svg";
 import saveIcon from "../assets/icon-save.svg";
 import logo from "../assets/logo.svg";
 import "./style/nav.css";
+import DeletePopup from "./DeletePopup";
 
 const Nav = () => {
     const { id } = useParams();
     const [docName, setDocName] = useState("");
     const [isOpened, setIsOpened] = useState(false);
-    const { files, updateFile,  removeFile } = React.useContext(FileContext);
+    const { files, updateFile, removeFile } = React.useContext(FileContext);
     const [sidebar, setSidebar] = useState(false);
+    const [onDelete, setOnDelete] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         if (id) {
             setIsOpened(true);
             const file = files.find((file) => file.id === id);
+            console.log(file);
             setDocName(file.name);
             document.title = `${file.name}`;
         }
@@ -54,8 +57,26 @@ const Nav = () => {
     }
     const deleteHandeler = () => {
         removeFile(id);
+        setOnDelete(false);
         navigate(`/`);
     }
+
+    const onCloseModal = () => {
+        setOnDelete(false);
+    }
+
+    const downloadMarkdown = () => {
+        const file = files.find((file) => file.id === id);
+        const element = document.createElement("a");
+        const fileContent = file.content;
+        const fileContentBlob = new Blob([fileContent], { type: "text/plain" });
+        const url = URL.createObjectURL(fileContentBlob);
+        element.href = url;
+        element.download = `${file.name}.md`;
+        document.body.appendChild(element);
+        element.click();
+    }
+
     return (
         <>
             <nav className="nav">
@@ -77,16 +98,16 @@ const Nav = () => {
                                 <label>Document Name</label>
                                 <input type="text"
                                     value={docName}
-                                    onChange={(e) => setDocName(e.target.value) } 
+                                    onChange={(e) => setDocName(e.target.value)}
                                     onBlur={onBlurHandler}
                                 />
                             </div>
                         </div>
                         <div className="nav__options">
-                            <button className="btn btn--delete" onClick={deleteHandeler}>
+                            <button className="btn btn--delete" onClick={() => setOnDelete(true)}>
                                 <img src={trashIcon} alt="trash" />
                             </button>
-                            <button className="btn btn--save">
+                            <button className="btn btn--save" onClick={downloadMarkdown}>
                                 <img src={saveIcon} alt="save" />
                                 <span > Save Changes </span>
                             </button>
@@ -94,6 +115,11 @@ const Nav = () => {
                     </>
                 )}
             </nav>
+            {
+                onDelete && (
+                    <DeletePopup docName={docName} onCloseModal={onCloseModal} deleteHandeler={deleteHandeler} />
+                )
+            }
         </>
     );
 };

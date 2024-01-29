@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 import { FileContext } from '../store/fileContext.js';
-import ThemeSwitcher from '../components/themeSwitcher/ThemeSwitcher';
+import './style/home.css';
 
 const Home = () => {
     const { addFile } = React.useContext(FileContext);
@@ -46,7 +46,7 @@ const Home = () => {
     return <>
         <div className='home'>
             <h1>No File is Open</h1>
-            <p onClick={addNewFileHandler}>Open a new file <span className='shortcut'>⌘+C</span></p>
+            <p onClick={addNewFileHandler}>Open  new file <span className='shortcut'>⌘+C</span></p>
             <p>Open an existing file <span className='shortcut'>⌘+O</span></p>
         </div>
     </>;

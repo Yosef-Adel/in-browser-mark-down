@@ -15,6 +15,7 @@
 .markdownView h4,
 .markdownView h5,
 .markdownView h6,
+.markdownView code,
 .markdownView blockquote,
 .markdownView blockquote a {
     color: var(--secondary-text-color);

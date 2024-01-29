@@ -32,9 +32,7 @@ const reducer = (state, action) => {
         }
         case FileUpdate: {
             const { id, name, content } = action.payload;
-            console.log('id', id);
-            console.log('name', name);
-            console.log('content', content);
+            console.log(content);
             return state.map(file => {
                 if (file.id === id) {
                     return {

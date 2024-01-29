@@ -1,0 +1,22 @@
+.delete__content h2 {
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    font-weight: 700;
+    color: #35393F;
+    margin-bottom: 20px;
+}
+
+.delete__content p {
+    color: #7C8187;
+    margin-bottom: 20px;
+    font-family: "Roboto Slab";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.delete__content button {
+    color: #FFFFFF;
+    margin: auto;
+
+}
