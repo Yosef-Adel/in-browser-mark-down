@@ -15,19 +15,25 @@ const EditPage = () => {
   useEffect(() => {
     if (id) {
       const file = files.find((file) => file.id === id);
-      setContent(file.content);
+      if (file) {
+        setContent(file.content);
+      }
     }
   }, [id, files]);
+
   useEffect(() => {
+    if (!id) return; // Guard clause
+
     const delay = 3000;
-    let timeoutId;
-    timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       const file = files.find((file) => file.id === id);
-      const name = file.name;
-      updateFile(id, name, content);
+      if (file) {
+        updateFile(id, file.name, content);
+      }
     }, delay);
+
     return () => clearTimeout(timeoutId);
-  }, [content]);
+  }, [content, id, files, updateFile]); // ✅ All dependencies included
 
   const changeHandler = (e) => {
     setContent(e.target.value);
