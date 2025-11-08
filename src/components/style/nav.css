@@ -1,168 +1,133 @@
-@import url('./base.css');
+@import url("./base.css");
 .nav {
-    width: 100%;
-    height: 7.2rem;
-    background-color: var(--tritary-bg-color);
-    color: var(--tritary-text-color);
-    display: grid;
-    grid-template-columns: 0px 7.2rem  18rem 1fr 23rem;
-    grid-template-areas:
-        "sidebar menu logo files  options";
-    transition: 300ms;
-    font-weight: 400;
+  width: 100%;
+  height: 7.2rem;
+  background-color: var(--tritary-bg-color);
+  color: var(--tritary-text-color);
+  display: grid;
+  grid-template-columns: 0px 7.2rem 18rem 1fr 35rem; /* Increased from 23rem to 35rem */
+  grid-template-areas: "sidebar menu logo files  options";
+  transition: 300ms;
+  font-weight: 400;
 }
-
 .nav__menu,
 .nav__logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .nav__menu {
-    grid-area: menu;
-    background-color: var(--menu-bg-color);
+  grid-area: menu;
+  background-color: var(--menu-bg-color);
 }
-
 .nav__logo {
-    grid-area: logo;
-    margin: 1.5rem 0;
-    border-right: 2px solid #5A6069;
+  grid-area: logo;
+  margin: 1.5rem 0;
+  border-right: 2px solid #5a6069;
 }
-
 .nav__doc {
-    display: flex;
-    align-items: center;
-    grid-area: files;
+  display: flex;
+  align-items: center;
+  grid-area: files;
 }
-
 .nav__doc img {
-    width: 1.4rem;
-    height: 1.6rem;
-    margin: 0 1.5rem;
+  width: 1.4rem;
+  height: 1.6rem;
+  margin: 0 1.5rem;
 }
-
 .nav__doc {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: var(--primary-text-color);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--primary-text-color);
 }
-
 .nav__doc input {
-    display: block;
-    background-color: transparent;
-    border: none;
-    color: var(--tritary-text-color);
-    font-size: 1.5rem;
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: var(--tritary-text-color);
+  font-size: 1.5rem;
 }
-
 input[type="text"]:focus {
-    outline: none;
-    border-bottom: 1px solid var(--tritary-text-color);
+  outline: none;
+  border-bottom: 1px solid var(--tritary-text-color);
 }
-
 .nav__options {
-    grid-area: options;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 2rem;
+  grid-area: options;
+  display: flex;
+  justify-content: flex-end; /* Changed from space-around to flex-end */
+  align-items: center;
+  gap: 1rem; /* Added gap between buttons */
+  margin-right: 2rem;
 }
-
 .btn {
-    border: none;
-    padding: 1rem 1.5rem;
-    font-size: 1.5rem;
-    font-weight: 400;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
-
 .btn--delete {
-    background-color: transparent;
+  background-color: transparent;
 }
-
 .btn--save {
-    background-color: var(--btn-bg-color);
-    color: var(--btn-text-color);
-
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap; /* Prevents text wrapping */
 }
-
 .btn--save img {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
-
 .nav .sidebar {
-    background-color: var(--fourth-bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--fourth-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .sidebar--opend {
-    width: 25rem;
-    height: 7.2rem;
+  width: 25rem;
+  height: 7.2rem;
 }
-
 .sidebar h1 {
-    color: var(--primary-text-color);
-    font-size: 1.4rem;
+  color: var(--primary-text-color);
+  font-size: 1.4rem;
 }
-
 .nav--opend {
-    grid-template-columns: 25rem 7.2rem 18rem 1fr 0px;
-    grid-template-areas:
-        "sidebar menu logo files options";
+  grid-template-columns: 25rem 7.2rem 18rem 1fr 0px;
+  grid-template-areas: "sidebar menu logo files options";
 }
-
 .nav--opend .nav__options,
 .nav__menu--close {
-    display: none;
+  display: none;
 }
-
-
-
 @media screen and (max-width: 700px) {
-    .nav__logo {
-        display: none;
-    }
-
-    .nav {
-        grid-template-columns: 0px 7.2rem 1fr 23rem;
-        grid-template-areas:
-            "sidebar menu files  options";
-    }
-
-    .nav--opend {
-        grid-template-columns: 25rem 7.2rem 1fr 0px;
-        grid-template-areas:
-            "sidebar menu files options";
-    }
-
-
+  .nav__logo {
+    display: none;
+  }
+  .nav {
+    grid-template-columns: 0px 7.2rem 1fr 35rem; /* Updated this too */
+    grid-template-areas: "sidebar menu files  options";
+  }
+  .nav--opend {
+    grid-template-columns: 25rem 7.2rem 1fr 0px;
+    grid-template-areas: "sidebar menu files options";
+  }
 }
-
 @media screen and (max-width: 550px) {
-    .nav {
-        grid-template-columns: 0px 7.2rem 1fr 10rem;
-        grid-template-areas:
-            "sidebar menu files  options";
-    }
-
-    .nav--opend {
-        grid-template-columns: 25rem 7.2rem 1fr 0px;
-        grid-template-areas:
-            "sidebar menu files options";
-    }
-
-    .btn span {
-        display: none;
-    }
-
-    .btn--save img {
-        margin-right: 0px;
-    }
+  .nav {
+    grid-template-columns: 0px 7.2rem 1fr 15rem; /* Increased from 10rem */
+    grid-template-areas: "sidebar menu files  options";
+  }
+  .nav--opend {
+    grid-template-columns: 25rem 7.2rem 1fr 0px;
+    grid-template-areas: "sidebar menu files options";
+  }
+  .btn span {
+    display: none;
+  }
+  .btn--save img {
+    margin-right: 0px;
+  }
 }
-

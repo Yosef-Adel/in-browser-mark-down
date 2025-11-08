@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Slab:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 
 .markdownView {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 400;
-    color: var(--primary-text-color);
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  direction: rtl;
+  text-align: right;
 }
 .markdownView h1,
 .markdownView h2,
@@ -17,7 +19,7 @@
 .markdownView code,
 .markdownView blockquote,
 .markdownView blockquote a {
-    color: var(--secondary-text-color);
+  color: var(--secondary-text-color);
 }
 
 .markdownView h1,
@@ -26,69 +28,67 @@
 .markdownView h4,
 .markdownView h5,
 .markdownView h6 {
-    font-weight: 700;
+  font-weight: 700;
 }
 .markdownView * {
-    margin-bottom: 2.1rem;
+  margin-bottom: 2.1rem;
 }
 .markdownView h1 {
-    font-size: 3.2rem;
+  font-size: 3.2rem;
 }
 .markdownView h2 {
-    font-size: 2.8rem;
-    font-weight: 400;
+  font-size: 2.8rem;
+  font-weight: 400;
 }
 .markdownView h3 {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 .markdownView h4 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 .markdownView h5 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 .markdownView h6 {
-    font-size: 1.2rem;
-    color: var(--fourth-text-color);
+  font-size: 1.2rem;
+  color: var(--fourth-text-color);
 }
 .markdownView li {
-    margin-left: 4.3rem;
-    margin-bottom: 5px;
+  margin-left: 4.3rem;
+  margin-bottom: 5px;
 }
 .markdownView ul {
-    list-style: none;
-    padding-left: 9px;
+  list-style: none;
+  padding-left: 9px;
 }
 .markdownView ul li::before {
-    content: '\2022';
-    /* Unicode character for a bullet point */
-    color: var(--fourth-text-color);
-    display: inline-block;
-    width: 1.5rem;
+  content: "\2022";
+  /* Unicode character for a bullet point */
+  color: var(--fourth-text-color);
+  display: inline-block;
+  width: 1.5rem;
 }
 .markdownView ul li {
-    margin-left: 2.4rem;
+  margin-left: 2.4rem;
 }
 .markdownView blockquote {
-    border-left: 4px solid var(--fourth-text-color);
-    background-color: var(--blockquote-bg-color);
-    padding: 2.4rem;
-    border-radius: 4px;
-    font-weight: 700;
-
+  border-left: 4px solid var(--fourth-text-color);
+  background-color: var(--blockquote-bg-color);
+  padding: 2.4rem;
+  border-radius: 4px;
+  font-weight: 700;
 }
 .markdownView blockquote p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 .markdownView a {
-    text-decoration: none;
-    text-decoration: underline;
-
+  text-decoration: none;
+  text-decoration: underline;
 }
 .markdownView pre {
-    background-color: var(--blockquote-bg-color);
-    padding: 2.4rem;
-    border-radius: 4px;
-    font-family: "Roboto Mono";
-    overflow-x: auto;
+  background-color: var(--blockquote-bg-color);
+  padding: 2.4rem;
+  border-radius: 4px;
+  font-family: "Roboto Mono";
+  overflow-x: auto;
 }
